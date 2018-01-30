@@ -26,7 +26,8 @@ function myTweets(){
 
 function spotifySong(){
 
-    
+    var spotify = new Spotify(keys.spotify);
+        
 };
 
 function movieThis(){
