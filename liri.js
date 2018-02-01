@@ -15,8 +15,6 @@ var spotify = new spotify(keys.spotify);
 var action = process.argv[2];
 var userPick = process.argv[3];
 
-
-
 run();
 
 function run(){
@@ -36,8 +34,8 @@ switch (action) {
     case "do-what-it-says":
         doSays();
         break;
-}
-}
+};
+};
 
 function myTweets() {
      
@@ -48,15 +46,12 @@ function myTweets() {
         if (!error) {
 
             for (var i = 0; i < 19 && i < tweets.length; i++) {
-                log.info("=======================")
+                log.info("=======================");
                 log.info(tweets[i].text);
                 log.info(tweets[i].created_at);
             };
         };
-        
-
-    });
-     
+    });  
 };
 
 
@@ -64,30 +59,28 @@ function myTweets() {
 function spotifySong() {
     if( !userPick ){
         userPick = "the sign by ace of base"
-   }
+   };
 
     spotify.search({ type: 'track', query: userPick }, function(err, data) {
         if ( err ) {
             log.info('Error occurred: ' + err);
             return;
-        }
+        };
 
         var data = data.tracks.items
 
         log.info("========================")
-        log.info("The Artist is: " + data[0].artists[0].name)
-        log.info("The song title is: " + data[0].name)
-        log.info("Preview Link: " + data[0].preview_url)
-        log.info("The album title is: " +data[0].album.name)
-            
+        log.info("The Artist is: " + data[0].artists[0].name);
+        log.info("The song title is: " + data[0].name);
+        log.info("Preview Link: " + data[0].preview_url);
+        log.info("The album title is: " +data[0].album.name);          
     });
-  
  };
 
     function movieThis() {
         if( !userPick ){
             userPick = "Mr. Nobody."
-       }
+       };
 
         var queryUrl = "http://www.omdbapi.com/?t=" + userPick + "&y=&plot=short&apikey=trilogy";
 
@@ -103,11 +96,8 @@ function spotifySong() {
                 log.info("Language of the movie: " + JSON.parse(body).Language);
                 log.info("Plot of the movie: " + JSON.parse(body).Plot);
                 log.info("Actors in the movie: " + JSON.parse(body).Actors);
-
-            }
-            
-        })
-
+            };  
+        });
     };
 
     function doSays() {
@@ -122,7 +112,5 @@ function spotifySong() {
             userPick = data[1];
 
             run();
-
         });
-
     };
