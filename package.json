@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/kahonen/Liri#readme",
   "dependencies": {
-    "node-spotify-api": "^1.0.7"
+    "dotenv": "^5.0.0",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "simple-node-logger": "^0.93.33",
+    "twitter": "^1.7.1"
   }
 }
